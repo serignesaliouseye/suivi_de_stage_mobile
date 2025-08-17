@@ -13,7 +13,8 @@ export default function LoginScreen() {
     if (!email || !password) return Alert.alert("Veuillez remplir tous les champs");
     try {
       setBusy(true);
-      await login(email, password);
+      await login(email, password)
+      Alert.alert("Succès", "Connexion réussie !");
       // la redirection est gérée par la garde dans _layout.tsx
     } catch (e: any) {
       Alert.alert("Erreur", e.message ?? "Connexion échouée");
